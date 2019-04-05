@@ -1,0 +1,9 @@
+body {
+    background : #edeef0;
+}
+.head {
+    background : #4a76a8;
+}
+.head > h1 {
+    color : #ffffff;
+}
