@@ -16,31 +16,74 @@ body {
 }
 .all {
     background : #edeef0;
-    width : 900px;
     margin : 0px auto;
     padding : 0px;
 }
 .info {
     background : #ffffff;
-    width : 586px;
     height : 300px;
     margin : 7px 7px 7px 0px;
-    padding : 7px;
     float : left;
 }
 .friends {
     background : #ffffff;
-    width : 279px;
     height : 450px;
     margin : 7px 0px 0px 0px;
-    padding : 7px;
     float : right;
 }
 .feed {
     background : #ffffff;
-    width : 586px;
-    height : 300px;
+    height : 500px;
     margin : 0px auto;
-    padding : 7px;
     float : left;
+}
+p {
+    margin : 7px;
+}
+@media screen and (min-width : 1000px) {
+    .all { width : 900px; }
+    .info { width : 600px; }
+    .feed { width: 600px; }
+    .friends { width: 293px; }
+}
+@media screen and (max-width : 1000px) {
+    .all { width : 700px; }
+    .info { width : 600px; }
+    .feed { width: 600px; }
+    .friends {
+        width : 93px;
+        background : #5888bd;    
+    }
+}
+@media screen and (max-width : 800px) {
+    .all { width : 600px; }
+    .info { width : 600px; }
+    .feed { width: 600px; }
+    .friends {
+        width : 600px;
+        height : 79px;
+        float : none;
+        background : #5888bd;
+    }
+}
+@media screen and (max-width : 614px) {
+    .all { width : 100%; padding : 0px; }
+    .info {
+        width : 100%;
+        margin : 7px 0px 0px 0px;
+    }
+    .feed {
+        width : 100%;
+        margin : 7px 0px 0px 0px;
+    }
+    .friends {
+        width : 100%;
+        height : 79px;
+        float : none;
+        margin : 0px 0px 0px 0px;
+    }
+    .head > h1 {                      
+        font : bold 15pt tahoma;
+        padding : 5px;
+    }
 }
