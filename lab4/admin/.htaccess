@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Admin Panel"
+AuthUserFile /j99922rf.beget.tech/public_html/admin/.htpasswd
+Require valid-user
