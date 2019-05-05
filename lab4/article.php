@@ -1,8 +1,8 @@
 <?php
     require_once("database.php");
     require_once("models/articles.php");
-    
-    $articles = articles_all();
 
-    include("views/articles.php");
+    $article = articles_get($_GET['id']);
+
+    include("views/article.php");
 ?>
