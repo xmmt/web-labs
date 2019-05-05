@@ -5,10 +5,37 @@
         <meta charset='utf-8' />
     </head>
     <body>
-        <canvas id='example'>Обновите браузер</canvas>
+        <!-- <canvas id='example'>Обновите браузер</canvas> -->
         <script>
-            var example = document.getElementById("example"),
-			    ctx     = example.getContext('2d');
+            var canv = document.createElement('canvas');
+            canv.width = 600;
+            canv.height = 600;
+            canv.setAttribute('id', 'collage');
+            canv.innerHTML = "Обновите браузер";
+            document.body.appendChild(canv);
+            var ctx     = canv.getContext('2d'),
+                pic1    = new Image(),
+                pic2    = new Image(),
+                pic3    = new Image(),
+                pic4    = new Image(),
+                x       = Math.floor(Math.random() * 300 + 150),
+                y       = Math.floor(Math.random() * 300 + 150);
+            pic1.src = `https://source.unsplash.com/collection/1127163/${x}x${y}/?sig=1`;
+            pic2.src = `https://source.unsplash.com/collection/1127163/${x}x${600 - y}/?sig=2`;
+            pic3.src = `https://source.unsplash.com/collection/1127163/${600 - x}x${y}/?sig=3`;
+            pic4.src = `https://source.unsplash.com/collection/1127163/${600 - x}x${600 - y}/?sig=4`;
+            pic1.onload = function() {
+                ctx.drawImage(pic1, 0, 0);
+            }
+            pic2.onload = function() {
+                ctx.drawImage(pic2, 0, y);
+            }
+            pic3.onload = function() {
+                ctx.drawImage(pic3, x, 0);
+            }
+            pic4.onload = function() {
+                ctx.drawImage(pic4, x, y);
+            }
             /*example.width  = 640;
             example.height = 480;
             ctx.strokeRect(15, 15, 266, 266);
@@ -18,7 +45,7 @@
                 for (j = 0; j < 8; j += 2) {
                     ctx.clearRect(20 + i * 32, 20 + j * 32, 32, 32);
                     ctx.clearRect(20 + (i + 1) * 32, 20 + (j + 1) * 32, 32, 32);
-                }*/
+                }
             ctx.beginPath();
 			ctx.arc(80, 100, 56, 3/4 * Math.PI, 1/4 * Math.PI, true);
 			ctx.fill(); // *14
@@ -30,9 +57,14 @@
 			ctx.lineTo(140, 40);
 			ctx.lineTo(120, 140);
 			ctx.stroke(); // *22
+            //document.body.appendChild(exam);*/
         </script>
-        <button onclick="loadPhones()">Загрузить phones.json!</button>
+        <!-- <button onclick="loadPhones()">Загрузить phones.json!</button> -->
         <script>
+            var but = document.createElement('button');
+            //but.onclick = loadPhones;
+            but.setAttribute('onclick', 'loadPhones()');
+            but.innerHTML = "Загрузить phones.!!";
     function loadPhones() {
       var xhr = new XMLHttpRequest();
 
@@ -47,6 +79,7 @@
         alert(xhr.responseText);
       }
     }
+            document.body.appendChild(but);
   </script>
     </body>
 </html>
