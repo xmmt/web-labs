@@ -31,5 +31,22 @@
 			ctx.lineTo(120, 140);
 			ctx.stroke(); // *22
         </script>
+        <button onclick="loadPhones()">Загрузить phones.json!</button>
+        <script>
+    function loadPhones() {
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=xml&lang=ru', false);
+      xhr.send();
+
+      if (xhr.status != 200) {
+        // обработать ошибку
+        alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
+      } else {
+        // вывести результат
+        alert(xhr.responseText);
+      }
+    }
+  </script>
     </body>
 </html>
