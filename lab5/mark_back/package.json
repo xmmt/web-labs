@@ -1,0 +1,14 @@
+{
+  "name": "mark-back",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.1",
+    "mongoose": "^5.5.2"
+  }
+}

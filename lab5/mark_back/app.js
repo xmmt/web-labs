@@ -1,0 +1,15 @@
+var express = require('express');
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var cors = require('cors');
+var config = require('./config');
+var markRouter = require('./routes/mark');
+var app = express();
+//app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(cors());
+app.use(markRouter);
+mongoose.set('useCreateIndex', true);
+mongoose.Promise = global.Promise;
+mongoose.connect(config.dbURL + config.dbName, config.dbOptions);
+module.exports = app;
